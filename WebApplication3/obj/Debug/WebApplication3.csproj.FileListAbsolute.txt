@@ -78,7 +78,6 @@ C:\Users\Praveen Reddy Manuko\Source\Repos\WebApplication3\WebApplication3\bin\S
 C:\Users\Praveen Reddy Manuko\Source\Repos\WebApplication3\WebApplication3\bin\Newtonsoft.Json.xml
 C:\Users\Praveen Reddy Manuko\Source\Repos\WebApplication3\WebApplication3\bin\Antlr3.Runtime.pdb
 C:\Users\Praveen Reddy Manuko\Source\Repos\WebApplication3\WebApplication3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Praveen Reddy Manuko\Source\Repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csprojAssemblyReference.cache
 C:\Users\Praveen Reddy Manuko\Source\Repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csproj.CoreCompileInputs.cache
 C:\Users\Praveen Reddy Manuko\Source\Repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csproj.CopyComplete
 C:\Users\Praveen Reddy Manuko\Source\Repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.dll

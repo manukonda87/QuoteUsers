@@ -8,7 +8,7 @@ const LoadQuoteUsers = () => {
     var quoteId = $("#QuoteId").val();
     $.ajax({
         type: "POST",
-        url: 'getQuoteUsers',
+        url: '/quote/getQuoteUsers',
         data: { quoteId: quoteId },
         success: function (resopnse) {
             $("#loadUsers").html(resopnse);
@@ -38,7 +38,7 @@ const loadSearchUsers = () => {
     var lastName = $('#txtLastName').val();
     $.ajax({
         type: "POST",
-        url: 'getSearchUsers',
+        url: '/quote/getSearchUsers',
         data: { firstName : firstName, lastName :lastName, quoteId: quoteId },
         success: function (resopnse) {
             
@@ -54,7 +54,7 @@ const addUsertoQuote = (userId) => {
     var quoteId = $("#QuoteId").val();
     $.ajax({
         type: "POST",
-        url: 'addUsertoQuote',
+        url: '/quote/addUsertoQuote',
         data: { userId: userId, quoteId: quoteId },
         success: function (data) {
             if (data) {
@@ -78,7 +78,7 @@ const deleteUser = () => {
     var quoteId = $("#QuoteId").val();
     $.ajax({
         type: "POST",
-        url: '/deleteUserFromQuote',
+        url: '/quote/deleteUserFromQuote',
         data: { userId: userId, quoteId: quoteId },
         success: function (data) {
             if (data) {

@@ -1,0 +1,88 @@
+﻿@using WebApplication3.Models
+@model Quote
+<div class="container">
+    <div class="card-header"> Quote </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.Label("Quote", new { @class = "col-form-label" })
+                    </div>
+                    <div class="col-8">
+                        @Html.TextBoxFor(m => m.Number, new { @class = "form-control", disabled = "disabled" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.LabelFor(m => m.Status, new { @class = "control-label" })
+                    </div>
+                    <div class="col-8">
+                        @Html.DropDownListFor(m => m.Status, new SelectList(Enum.GetValues(typeof(QuoteStatus))), new { @class = "form-control nav-link dropdown-toggle" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.LabelFor(m => m.Applicant, new { @class = "control-label" })
+                    </div>
+                    <div class="col-8">
+                        @Html.TextBoxFor(m => m.Applicant, new { @class = "form-control", disabled = "disabled" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.Label("Start Date", new { @class = "control-label" })
+                    </div>
+                    <div class="col-8">
+                        @Html.EditorFor(m => m.StartDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.Label("Effective Date", new { @class = "control-label" })
+                    </div>
+                    <div class="col-8">
+                        @Html.EditorFor(m => m.EffectiveDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group col-12 row">
+                    @foreach (var premiumOption in Enum.GetValues(typeof(PremiumTypes)))
+                    {
+                        <div class="col-6">
+                            @Html.RadioButtonFor(m => m.PremiumOption, Model.PremiumId, (premiumOption.ToString() == Model.PremiumOption ? new { @checked = "checked" } : null)) @premiumOption.ToString()<br />
+                            <strong class="form-group">
+                                @Html.Label("$")
+                                @{
+                                    if (premiumOption.ToString().ToLower() == "basic")
+                                    {
+                                        @Html.DisplayFor(m => m.Premium.Basic, new { @class = "control-label" })
+                                    }
+                                    else if (premiumOption.ToString().ToLower() == "preffered")
+                                    {
+                                        @Html.DisplayFor(m => m.Premium.Preferred, new { @class = "control-label" })
+                                    }
+                                    else if (premiumOption.ToString().ToLower() == "premier")
+                                    {
+                                        @Html.DisplayFor(m => m.Premium.Premier, new { @class = "control-label" })
+                                    }
+                                }
+                            </strong>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

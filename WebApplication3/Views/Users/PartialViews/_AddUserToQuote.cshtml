@@ -1,0 +1,30 @@
+﻿
+<div class="container">
+    <div class="card-header"> Add User</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    @Html.Label("First Name", new { @class = "control - label" })
+                    @Html.TextBox("txtFirstName", string.Empty, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    @Html.Label("Last Name", new { @class = "control - label" })
+                    @Html.TextBox("txtLastName", string.Empty, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                   <br/>
+                    <input type="button" id="btnSearch" class="btn btn-primary" value="Search" onclick="loadSearchUsers()" data-toggle="tooltip" data-placement="right" title="click to search user"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="searchUserList">
+          
+        </div>
+    </div>
+</div>

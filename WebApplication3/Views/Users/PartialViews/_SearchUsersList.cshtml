@@ -1,0 +1,46 @@
+﻿@using WebApplication3.Models
+@model IEnumerable<UserQuoteViewModel>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>DOB</th>
+            <th>Add to Quote</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (!(Model == null || Model.Count() == 0))
+            {
+                foreach (var userQuote in Model)
+                {
+                    <tr>
+                        <td>@userQuote.user.FirstName</td>
+                        <td>@userQuote.user.DOB.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            @{
+                                if (!userQuote.IsExistingUser)
+                                {
+                                    <input type="button" id="btnAdd" class="btn btn-success" value="Add" onclick="addUsertoQuote(@userQuote.user.Id)" data-toggle="tooltip" data-placement="right" title="click to add user" />
+                                }
+                                else
+                                {
+                                    <input type="button" id="btnAdd" class="btn btn-default" value="Add" disabled="disabled" data-toggle="tooltip" data-placement="right" title="This user is already added to quote" />
+                                }
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3"><h1 class="text-danger">No Data found</h1></td>
+                </tr>
+            }
+        }
+        
+    </tbody>
+</table>
